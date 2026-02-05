@@ -21,9 +21,12 @@ namespace EjerciciosCSharp
             // Ejemplo: Si numero = 5, una línea sería: "5 x 1 = 5\n"
             
             string resultado = "";
-            
-            // TU CÓDIGO AQUÍ
-            
+
+            for (int i = 1; i <= 12; i++)
+            {
+                resultado += numero + " x " + i + " = " + (numero * i) + "\n";
+            }
+     
             return resultado;
         }
 
@@ -48,7 +51,21 @@ namespace EjerciciosCSharp
             int intentos = 0;
             string entrada = "";
             
-            // TU CÓDIGO AQUÍ (usa do-while)
+            string claveSecreta = "1234";
+            string entrada;
+            int intentos = 0;
+
+            do
+            { 
+                Console.Write("Ingrese la clave: ");
+                entrada = Console.ReadLine();
+                intentos++;
+            }
+            while (entrada != claveSecreta);
+
+            Console.WriteLine("Clave correcta.");
+            Console.WriteLine("Intentos realizados: " + intentos);
+
             
             return intentos;
         }
@@ -71,12 +88,18 @@ namespace EjerciciosCSharp
             // 5. Retorna el acumulador al final
             
             int suma = 0;
-            
-            // TU CÓDIGO AQUÍ (usa while o foreach con break)
-            
-            return suma;
-        }
 
+            foreach (int numero in numeros)
+            {
+                suma += numero;
+
+                if (numero == 0)
+                {
+                    break;
+                }
+                return suma;
+            }    
+        }      
         /// <summary>
         /// Ejercicio 4: El Contador de Pares
         /// Retorna todos los números pares entre 0 y 50
@@ -95,8 +118,26 @@ namespace EjerciciosCSharp
             
             string resultado = "";
             
-            // TU CÓDIGO AQUÍ (usa for con i+=2)
-            
+            static string ObtenerNumerosPares(int limite)
+            {
+                string resultado = "";
+
+                for (int i = 0; i <= limite; i += 2)
+                {
+                    if (i + 2 <= limite)
+                    {
+                        resultado += i + ", ";
+                    }
+                    else
+                    {
+                        resultado += i;
+                    }
+                }
+
+                 
+              
+
+            }
             return resultado;
         }
     }
